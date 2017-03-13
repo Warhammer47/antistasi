@@ -321,7 +321,6 @@ revelar = false;
 vehInGarage = ["C_Van_01_transport_F","C_Offroad_01_F","C_Offroad_01_F","B_G_Quadbike_01_F","B_G_Quadbike_01_F","B_G_Quadbike_01_F"]; // initial motorpool
 destroyedBuildings = []; publicVariable "destroyedBuildings";
 reportedVehs = [];
-hayXLA = false;
 hayTFAR = false;
 hayACEhearing = false;
 hayACEMedical = false;
@@ -376,10 +375,6 @@ for "_i" from 0 to (count _allVehicles - 1) do {
     };
 };
 
-if !(isnil "XLA_fnc_addVirtualItemCargo") then {
-	hayXLA = true;
-};
-
 #include "Scripts\BE_modul.sqf"
 [] call fnc_BE_initialize;
 if !(isNil "BE_INIT") then {hayBE = true; publicVariable "hayBE"};
@@ -418,7 +413,7 @@ publicVariable "vehInGarage";
 publicVariable "reportedVehs";
 publicVariable "hayACE";
 publicVariable "hayTFAR";
-publicVariable "hayXLA";
+
 publicVariable "hayACEhearing";
 publicVariable "hayACEMedical";
 publicVariable "skillAAF";
